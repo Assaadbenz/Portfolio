@@ -229,21 +229,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
   copyElements.forEach(item => {
     item.addEventListener('click', (e) => {
-      e.preventDefault();
+      // Si l'utilisateur clique directement sur le lien <a>, on ne bloque pas sa navigation
+      if (e.target.tagName.toLowerCase() === 'a') {
+        return;
+      }
+      
       const textToCopy = item.getAttribute('data-copy');
       if (!textToCopy) return;
 
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(textToCopy).then(() => {
-          showToast(`Copié dans le presse-papiers : ${textToCopy}`);
-        }).catch(() => {
-          fallbackCopy(textToCopy);
-        });
-      } else {
-        fallbackCopy(textToCopy);
-      }
+      copyToClipboard(textToCopy);
     });
   });
+
+  // Gestionnaire pour les boutons de copie dédiés
+  const copyBtnEmail = document.getElementById('btn-copy-email');
+  if (copyBtnEmail) {
+    copyBtnEmail.addEventListener('click', (e) => {
+      e.preventDefault();
+      copyToClipboard('elmiloudiassaad2@gmail.com');
+    });
+  }
+
+  function copyToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(`Copié dans le presse-papiers : ${text}`);
+      }).catch(() => {
+        fallbackCopy(text);
+      });
+    } else {
+      fallbackCopy(text);
+    }
+  }
+
+
 
   function fallbackCopy(text) {
     const tempInput = document.createElement('input');
