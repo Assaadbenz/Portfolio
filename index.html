@@ -23,6 +23,7 @@
         <li><a href="#parcours">Parcours</a></li>
         <li><a href="cv.html">Mon CV</a></li>
         <li><a href="#contact" class="nav-cta">Me Contacter</a></li>
+        <li><button id="theme-toggle" class="theme-toggle-btn" title="Basculer Mode Sombre / Clair" aria-label="Basculer Mode Sombre / Clair">🌙</button></li>
       </ul>
     </nav>
   </header>
@@ -33,7 +34,7 @@
       <img class="top-cloud" src="images/cloud.png" alt="Nuage décoratif en haut à droite">
       <div class="title-text">
         <h1 class="hero-title">Je suis Assaad.</h1>
-        <h2 class="hero-subtitle">Ingénieur &amp; Développeur <span class="pro">Web</span> &amp; IA.</h2>
+        <h2 class="hero-subtitle">Ingénieur &amp; Développeur <span id="typewriter" class="pro">Web Moderne</span><span class="cursor">|</span></h2>
         <p class="hero-tagline">
           Étudiant en Master Ingénierie des Systèmes Informatiques. Passionné par le développement moderne, l'intelligence artificielle, l'analyse de données et les réseaux.
         </p>
@@ -51,7 +52,7 @@
       
       <!-- Section À Propos -->
       <section id="a-propos" class="section profile-section">
-        <div class="profile-card">
+        <div class="profile-card reveal">
           <img class="profile-img" src="images/profile.jpg" alt="Portrait de profil d'Assaad EL MILOUDI">
           <h2 class="section-title">Bonjour &amp; Bienvenue</h2>
           <p class="intro">
@@ -76,7 +77,7 @@
         <h2 class="section-title">Mes Compétences</h2>
         <p class="section-subtitle">Un socle technique pluridisciplinaire forgé à travers mes formations et mes projets pratiques.</p>
         
-        <div class="skills-grid">
+        <div class="skills-grid reveal">
           <!-- Carte 1 : Dev Web -->
           <article class="skill-card">
             <div class="skill-media">
@@ -160,7 +161,7 @@
         </div>
 
         <!-- Deuxième ligne : Soft Skills & Langues -->
-        <div class="skills-extra-row">
+        <div class="skills-extra-row reveal">
           <!-- Soft Skills -->
           <div class="extra-card">
             <h3 class="extra-card-title">Compétences Comportementales (Soft Skills)</h3>
@@ -255,7 +256,7 @@
         <h2 class="section-title">Mes Projets Réalisés</h2>
         <p class="section-subtitle">Découvrez trois de mes réalisations phares disponibles en libre accès sur GitHub.</p>
 
-        <div class="projects-grid">
+        <div class="projects-grid reveal">
           <!-- Projet 1 : Fleet Tracker -->
           <article class="project-card">
             <div class="project-header-banner banner-fleet">
@@ -343,7 +344,7 @@
         <h2 class="section-title">Formations &amp; Expériences</h2>
         <p class="section-subtitle">Mon parcours académique et mes stages en entreprise.</p>
 
-        <div class="timeline-section-grid">
+        <div class="timeline-section-grid reveal">
           <!-- Colonne Formations -->
           <div class="timeline-column">
             <h3 class="timeline-column-title">🎓 Cursus &amp; Diplômes</h3>
@@ -428,7 +429,7 @@
         </div>
 
         <!-- Certifications en Ligne -->
-        <div class="certifications-container">
+        <div class="certifications-container reveal">
           <h3 class="certifications-title">📜 Certifications en Ligne</h3>
           <div class="certifications-grid">
             <div class="cert-card">
@@ -476,15 +477,15 @@
 
         <!-- Cartes Coordonnées -->
         <div class="contact-cards-grid">
-          <div class="contact-info-card">
+          <div class="contact-info-card" data-copy="elmiloudiassaad2@gmail.com" title="Cliquez pour copier l'email" style="cursor: pointer;">
             <div class="contact-card-icon">📧</div>
-            <span class="contact-card-label">Email</span>
+            <span class="contact-card-label">Email (Cliquez pour copier)</span>
             <a href="mailto:elmiloudiassaad2@gmail.com" class="contact-card-value">elmiloudiassaad2@gmail.com</a>
           </div>
 
-          <div class="contact-info-card">
+          <div class="contact-info-card" data-copy="0662079568" title="Cliquez pour copier le numéro" style="cursor: pointer;">
             <div class="contact-card-icon">📞</div>
-            <span class="contact-card-label">Téléphone</span>
+            <span class="contact-card-label">Téléphone (Cliquez pour copier)</span>
             <a href="tel:0662079568" class="contact-card-value">06 62 07 95 68</a>
           </div>
 
@@ -511,8 +512,13 @@
       <a class="footer-link" href="mailto:elmiloudiassaad2@gmail.com">Email</a>
       <a class="footer-link" href="tel:0662079568">Téléphone</a>
     </div>
-    <p class="copyright">&copy; 2026 Assaad EL MILOUDI. Tous droits réservés &bull; Conçu en HTML5 &amp; CSS3.</p>
+    <p class="copyright">&copy; 2026 Assaad EL MILOUDI. Tous droits réservés &bull; Conçu en HTML5 &amp; CSS3 &amp; JS.</p>
   </footer>
 
+  <!-- Bouton Flottant Retour en Haut -->
+  <button id="back-to-top" class="back-to-top" title="Retour en haut de page" aria-label="Retour en haut de page">↑</button>
+
+  <!-- Script d'améliorations interactives -->
+  <script src="script.js" defer></script>
 </body>
 </html>
