@@ -83,6 +83,53 @@
   background-color: #06090e;
 }
 
+[data-theme="dark"] .cv-doc-name,
+[data-theme="dark"] .cv-doc-headline,
+[data-theme="dark"] .cv-doc-entry-title,
+[data-theme="dark"] .cv-doc-place,
+[data-theme="dark"] .cv-doc-skill-line strong,
+[data-theme="dark"] .cv-doc-cert-line strong,
+[data-theme="dark"] .cv-doc-lang-row strong {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .cv-doc-sec-title {
+  color: #2dd4bf;
+  border-bottom-color: #2dd4bf;
+}
+
+[data-theme="dark"] .cv-doc-paragraph,
+[data-theme="dark"] .cv-doc-bullets,
+[data-theme="dark"] .cv-doc-desc,
+[data-theme="dark"] .cv-doc-skills-list,
+[data-theme="dark"] .cv-doc-cert-line,
+[data-theme="dark"] .cv-doc-lang-block,
+[data-theme="dark"] .cv-doc-contact-line {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .cv-doc-contact-line a {
+  color: #38bdf8;
+}
+
+[data-theme="dark"] .cv-doc-contact-line a:hover {
+  color: #7dd3fc;
+}
+
+[data-theme="dark"] .cv-doc-entry-sub,
+[data-theme="dark"] .cv-doc-date,
+[data-theme="dark"] .cv-doc-entry-tech {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .cv-doc-project-link a {
+  color: #2dd4bf;
+}
+
+[data-theme="dark"] .cv-sep {
+  color: #64748b;
+}
+
 [data-theme="dark"] .cv-summary-block {
   background-color: #131d31;
   color: #cbd5e1;
@@ -1362,8 +1409,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #ffffff;
   border: 1px solid #d1d5db;
   border-radius: 6px;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-  padding: 2.2rem 2.6rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  padding: 2.4rem 2.8rem;
   margin-bottom: 2.5rem;
   position: relative;
   box-sizing: border-box;
@@ -1388,284 +1435,214 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* En-tête Page 1 */
-.cv-header-exec {
-  border-bottom: 2px solid #0f766e;
-  padding-bottom: 1.2rem;
-  margin-bottom: 1.2rem;
+/* En-tête du document CV */
+.cv-doc-header {
+  margin-bottom: 1.25rem;
 }
 
-.cv-name-exec {
+.cv-doc-name {
   font-family: var(--font-heading);
   font-size: 2.2rem;
   font-weight: 800;
-  color: #0f172a;
+  color: #111827;
   letter-spacing: -0.5px;
   line-height: 1.15;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
 }
 
-.cv-title-exec {
+.cv-doc-headline {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  color: #0f766e;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  margin-bottom: 0.75rem;
+  color: #111827;
+  margin-bottom: 0.35rem;
 }
 
-.cv-contact-row {
+.cv-doc-contact-line {
+  font-size: 0.88rem;
+  color: #374151;
+  margin-bottom: 0.18rem;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem 1.4rem;
-  font-size: 0.84rem;
-  color: #475569;
-}
-
-.cv-contact-item {
-  display: inline-flex;
   align-items: center;
   gap: 0.35rem;
 }
 
-.cv-contact-item a {
+.cv-doc-contact-line a {
+  color: #111827;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.cv-doc-contact-line a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.cv-sep {
+  color: #9ca3af;
+  margin: 0 0.15rem;
+}
+
+/* Sections du document CV */
+.cv-doc-section {
+  margin-top: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.cv-doc-sec-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1.5px solid #111827;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.7rem;
+}
+
+.cv-doc-paragraph {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: #374151;
+}
+
+/* Entrées du CV */
+.cv-doc-entry {
+  margin-bottom: 0.75rem;
+}
+
+.cv-doc-entry:last-child {
+  margin-bottom: 0;
+}
+
+.cv-doc-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.15rem;
+}
+
+.cv-doc-entry-title {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #111827;
+  flex: 1 1 auto;
+}
+
+.cv-doc-entry-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  flex-shrink: 0;
+  font-size: 0.82rem;
+}
+
+.cv-doc-place {
+  font-weight: 700;
+  color: #111827;
+  font-size: 0.84rem;
+}
+
+.cv-doc-date {
+  color: #4b5563;
+  font-size: 0.82rem;
+}
+
+.cv-doc-entry-sub {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #4b5563;
+  margin-bottom: 0.2rem;
+}
+
+.cv-doc-bullets {
+  padding-left: 1.1rem;
+  margin: 0.15rem 0 0;
+  font-size: 0.84rem;
+  line-height: 1.48;
+  color: #374151;
+}
+
+.cv-doc-bullets li {
+  margin-bottom: 0.12rem;
+}
+
+.cv-doc-entry-tech {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #4b5563;
+  white-space: nowrap;
+}
+
+.cv-doc-desc {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.cv-doc-project-link {
+  font-size: 0.82rem;
+  margin-top: 0.15rem;
+}
+
+.cv-doc-project-link a {
   color: #0f766e;
   font-weight: 600;
   text-decoration: none;
 }
 
-.cv-contact-item a:hover {
+.cv-doc-project-link a:hover {
   text-decoration: underline;
 }
 
-/* Accroche / Profil */
-.cv-summary-block {
-  background-color: #f8fafc;
-  border-left: 3px solid #0f766e;
-  padding: 0.65rem 0.9rem;
-  border-radius: 0 4px 4px 0;
-  margin-bottom: 1.2rem;
-  font-size: 0.86rem;
-  line-height: 1.55;
-  color: #334155;
-}
-
-/* En-tête Page 2 */
-.cv-header-page2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  border-bottom: 2px solid #0f766e;
-  padding-bottom: 0.6rem;
-  margin-bottom: 1.2rem;
-}
-
-.cv-header-page2 h2 {
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: #0f172a;
-}
-
-.cv-header-page2 span {
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #0f766e;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* Structure à deux colonnes */
-.cv-two-col {
-  display: grid;
-  grid-template-columns: 1.7fr 1fr;
-  gap: 1.8rem;
-}
-
-/* Sections et Titres */
-.cv-section {
-  margin-bottom: 1.15rem;
-}
-
-.cv-section:last-child {
-  margin-bottom: 0;
-}
-
-.cv-sec-title {
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: #0f766e;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  border-bottom: 1px solid #cbd5e1;
-  padding-bottom: 0.3rem;
-  margin-bottom: 0.75rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-/* Entrées d'Expérience et de Formation */
-.cv-item {
-  margin-bottom: 0.85rem;
-  position: relative;
-}
-
-.cv-item:last-child {
-  margin-bottom: 0;
-}
-
-.cv-item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 0.5rem;
-  margin-bottom: 0.15rem;
-}
-
-.cv-item-title {
-  font-family: var(--font-heading);
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: #0f172a;
-}
-
-.cv-item-date {
-  font-family: var(--font-heading);
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: #0f766e;
-  white-space: nowrap;
-}
-
-.cv-item-subtitle {
-  font-family: var(--font-heading);
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #475569;
-  margin-bottom: 0.25rem;
-}
-
-.cv-item-desc {
-  font-size: 0.82rem;
-  line-height: 1.5;
-  color: #334155;
-}
-
-.cv-item-bullets {
-  padding-left: 1.1rem;
-  margin: 0.25rem 0 0;
-  font-size: 0.82rem;
-  line-height: 1.45;
-  color: #334155;
-}
-
-.cv-item-bullets li {
-  margin-bottom: 0.2rem;
-}
-
-/* Blocs de la colonne latérale */
-.cv-side-group {
-  margin-bottom: 0.85rem;
-}
-
-.cv-side-group:last-child {
-  margin-bottom: 0;
-}
-
-.cv-side-group h4 {
-  font-family: var(--font-heading);
-  font-size: 0.84rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 0.2rem;
-}
-
-.cv-side-group p {
-  font-size: 0.8rem;
-  line-height: 1.45;
-  color: #475569;
-}
-
-/* Soft skills compactes */
-.cv-soft-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 0.8rem;
-  line-height: 1.45;
-  color: #334155;
-}
-
-.cv-soft-list li {
-  margin-bottom: 0.4rem;
-  position: relative;
-  padding-left: 0.85rem;
-}
-
-.cv-soft-list li::before {
-  content: "■";
-  position: absolute;
-  left: 0;
-  color: #0f766e;
-  font-size: 0.6rem;
-  top: 0.15rem;
-}
-
-/* Langues compactes */
-.cv-lang-list {
+/* Compétences techniques & Certifications & Langues */
+.cv-doc-skills-list {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 0.4rem;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: #374151;
 }
 
-.cv-lang-row {
+.cv-doc-skill-line strong,
+.cv-doc-cert-line strong,
+.cv-doc-lang-row strong {
+  color: #111827;
+}
+
+.cv-doc-cert-line {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.cv-doc-cert-line:last-child {
+  margin-bottom: 0;
+}
+
+.cv-doc-lang-block {
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: #374151;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.8rem;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-.cv-lang-name {
-  font-weight: 600;
-  color: #0f172a;
-}
-
-.cv-lang-level {
-  font-size: 0.76rem;
-  font-weight: 700;
-  color: #0f766e;
-}
-
-.cv-lang-bar-thin {
-  height: 4px;
-  background-color: #e2e8f0;
-  border-radius: 9999px;
-  overflow: hidden;
-  margin-top: 0.15rem;
-}
-
-.cv-lang-fill-thin {
-  height: 100%;
-  background-color: #0f766e;
-  border-radius: 9999px;
-}
-
-/* Pied de page du CV */
-.cv-page-footer {
-  margin-top: 1.2rem;
-  padding-top: 0.5rem;
-  border-top: 1px solid #e2e8f0;
+.cv-doc-lang-row {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  font-size: 0.72rem;
-  color: #94a3b8;
-  font-family: var(--font-heading);
+  gap: 0.35rem;
 }
 
 /* ==========================================================================
@@ -1871,96 +1848,85 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   }
 
-  /* Passage en 1 seule colonne fluide sur mobile pour un confort de lecture optimal */
-  .cv-two-col {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 1.75rem !important;
+  /* Responsivité pour le nouveau CV (cv-doc) sur smartphone */
+  .cv-page-sheet {
+    padding: 1.35rem 1.1rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   }
 
-  .cv-col-main,
-  .cv-col-side {
-    width: 100% !important;
-  }
-
-  .cv-name-exec {
-    font-size: 1.75rem;
+  .cv-doc-name {
+    font-size: 1.7rem;
     line-height: 1.2;
     text-align: left;
   }
 
-  .cv-title-exec {
-    font-size: 0.92rem;
+  .cv-doc-headline {
+    font-size: 0.95rem;
     line-height: 1.45;
   }
 
-  .cv-contact-row {
-    display: flex;
+  .cv-doc-contact-line {
     flex-direction: column;
-    gap: 0.5rem;
     align-items: stretch;
-    margin-top: 0.5rem;
+    gap: 0.45rem;
+    margin-bottom: 0.45rem;
   }
 
-  .cv-contact-item {
+  .cv-doc-contact-line .cv-sep {
+    display: none;
+  }
+
+  .cv-doc-contact-line a {
     background-color: var(--color-bg-subtle);
     border: 1px solid var(--color-border);
-    padding: 0.55rem 0.85rem;
-    border-radius: var(--radius-sm);
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--radius-xs);
     font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    display: block;
+    word-break: break-all;
   }
 
-  .cv-summary-block {
-    font-size: 0.92rem;
-    line-height: 1.65;
-    padding: 0.85rem 1rem;
-    border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
-  }
-
-  .cv-sec-title {
-    font-size: 1.05rem;
-    padding-bottom: 0.4rem;
-    margin-bottom: 0.9rem;
-  }
-
-  .cv-item {
-    margin-bottom: 1.1rem;
-  }
-
-  .cv-item-title {
+  .cv-doc-sec-title {
     font-size: 1rem;
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.75rem;
   }
 
-  .cv-item-date {
-    font-size: 0.84rem;
+  .cv-doc-entry-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
   }
 
-  .cv-item-subtitle {
-    font-size: 0.88rem;
+  .cv-doc-entry-meta {
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: row;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.2rem;
   }
 
-  .cv-item-desc,
-  .cv-item-bullets,
-  .cv-side-group p,
-  .cv-soft-list {
+  .cv-doc-paragraph,
+  .cv-doc-bullets,
+  .cv-doc-desc,
+  .cv-doc-skills-list,
+  .cv-doc-cert-line,
+  .cv-doc-lang-block {
     font-size: 0.92rem;
     line-height: 1.6;
   }
 
-  .cv-side-group h4 {
-    font-size: 0.92rem;
-    margin-bottom: 0.3rem;
+  .cv-doc-lang-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
   }
 
-  .cv-lang-row {
-    font-size: 0.9rem;
-  }
-
-  .cv-lang-bar-thin {
-    height: 6px;
+  .cv-doc-lang-row .cv-sep {
+    display: none;
   }
 
   .cv-page-separator {
@@ -2010,7 +1976,7 @@ h1, h2, h3, h4, h5, h6 {
 @media print {
   @page {
     size: A4 portrait;
-    margin: 6mm 10mm 6mm 10mm;
+    margin: 8mm 12mm 8mm 12mm;
   }
 
   *,
@@ -2024,8 +1990,8 @@ h1, h2, h3, h4, h5, h6 {
   html,
   .cv-page-body {
     background-color: #ffffff !important;
-    color: #0f172a !important;
-    font-size: 8.5pt !important;
+    color: #000000 !important;
+    font-size: 8.4pt !important;
     line-height: 1.35 !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -2062,51 +2028,7 @@ h1, h2, h3, h4, h5, h6 {
     background: transparent !important;
   }
 
-  /* Préservation de la disposition 2 colonnes en impression */
-  .cv-two-col {
-    display: grid !important;
-    grid-template-columns: 1.7fr 1fr !important;
-    gap: 1.4rem !important;
-  }
-
-  .cv-col-main,
-  .cv-col-side {
-    width: auto !important;
-  }
-
-  .cv-contact-row {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    gap: 0.35rem 1.1rem !important;
-  }
-
-  .cv-contact-item {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    width: auto !important;
-    display: inline-flex !important;
-  }
-
-  .cv-item {
-    margin-bottom: 0.55rem !important;
-  }
-
-  .cv-item-bullets {
-    margin-top: 0.15rem !important;
-    padding-left: 1rem !important;
-  }
-
-  .cv-item-bullets li {
-    margin-bottom: 0.1rem !important;
-  }
-
-  .cv-section {
-    margin-bottom: 0.75rem !important;
-  }
-
-  /* Règle de coupure exacte : Page 1 coupe après, Page 2 ne déborde pas */
+  /* Règle de coupure stricte : Page 1 coupe après, Page 2 ne déborde pas */
   .cv-page-1 {
     page-break-after: always !important;
     break-after: page !important;
@@ -2125,58 +2047,144 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box !important;
   }
 
-  .cv-sec-title {
-    color: #0f766e !important;
-    border-bottom: 1px solid #94a3b8 !important;
-    font-size: 9pt !important;
-    margin-bottom: 0.4rem !important;
-    padding-bottom: 0.15rem !important;
+  .cv-doc-header {
+    margin-bottom: 0.8rem !important;
   }
 
-  .cv-item-title,
-  .cv-name-exec {
-    color: #0f172a !important;
-  }
-
-  .cv-name-exec {
-    font-size: 1.7rem !important;
+  .cv-doc-name {
+    font-size: 1.95rem !important;
+    color: #000000 !important;
     margin-bottom: 0.15rem !important;
   }
 
-  .cv-title-exec {
-    font-size: 0.85rem !important;
-    margin-bottom: 0.4rem !important;
+  .cv-doc-headline {
+    font-size: 0.95rem !important;
+    color: #000000 !important;
+    margin-bottom: 0.2rem !important;
   }
 
-  .cv-summary-block {
-    background-color: #f1f5f9 !important;
-    border-left: 3px solid #0f766e !important;
-    padding: 0.4rem 0.65rem !important;
-    margin-bottom: 0.75rem !important;
+  .cv-doc-contact-line {
+    font-size: 8.5pt !important;
+    color: #000000 !important;
+    margin-bottom: 0.08rem !important;
+    gap: 0.3rem !important;
+  }
+
+  .cv-doc-contact-line a {
+    color: #000000 !important;
+    text-decoration: none !important;
+  }
+
+  .cv-doc-section {
+    margin-top: 0.85rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .cv-doc-sec-title {
+    font-size: 9pt !important;
+    color: #000000 !important;
+    border-bottom: 1.2px solid #000000 !important;
+    margin-bottom: 0.38rem !important;
+    padding-bottom: 0.1rem !important;
+  }
+
+  .cv-doc-paragraph {
     font-size: 8.2pt !important;
+    color: #000000 !important;
+    line-height: 1.35 !important;
   }
 
-  .cv-item-date,
-  .cv-title-exec,
-  .cv-lang-level {
-    color: #0f766e !important;
+  .cv-doc-entry {
+    margin-bottom: 0.45rem !important;
   }
 
-  .cv-header-exec {
-    padding-bottom: 0.6rem !important;
-    margin-bottom: 0.6rem !important;
+  .cv-doc-entry-header {
+    margin-bottom: 0.08rem !important;
   }
 
-  .cv-header-page2 {
-    padding-bottom: 0.4rem !important;
-    margin-bottom: 0.6rem !important;
+  .cv-doc-entry-title {
+    font-size: 8.5pt !important;
+    color: #000000 !important;
   }
 
-  .cv-lang-bar-thin {
-    background-color: #e2e8f0 !important;
+  .cv-doc-place {
+    font-size: 8.2pt !important;
+    color: #000000 !important;
   }
 
-  .cv-lang-fill-thin {
-    background-color: #0f766e !important;
+  .cv-doc-date {
+    font-size: 7.8pt !important;
+    color: #222222 !important;
+  }
+
+  .cv-doc-entry-sub {
+    font-size: 8.1pt !important;
+    color: #222222 !important;
+    margin-bottom: 0.08rem !important;
+  }
+
+  .cv-doc-bullets {
+    margin-top: 0.08rem !important;
+    padding-left: 0.85rem !important;
+    font-size: 7.9pt !important;
+    line-height: 1.3 !important;
+    color: #000000 !important;
+  }
+
+  .cv-doc-bullets li {
+    margin-bottom: 0.06rem !important;
+  }
+
+  .cv-doc-entry-tech {
+    font-size: 8pt !important;
+    color: #222222 !important;
+  }
+
+  .cv-doc-desc {
+    font-size: 8pt !important;
+    line-height: 1.35 !important;
+    color: #000000 !important;
+    margin-bottom: 0.12rem !important;
+  }
+
+  .cv-doc-project-link {
+    font-size: 8pt !important;
+    margin-top: 0.08rem !important;
+  }
+
+  .cv-doc-project-link a {
+    color: #000000 !important;
+    text-decoration: underline !important;
+  }
+
+  .cv-doc-skills-list {
+    gap: 0.25rem !important;
+    font-size: 8.2pt !important;
+    line-height: 1.35 !important;
+    color: #000000 !important;
+  }
+
+  .cv-doc-skill-line strong,
+  .cv-doc-cert-line strong,
+  .cv-doc-lang-row strong {
+    color: #000000 !important;
+  }
+
+  .cv-doc-cert-line {
+    font-size: 8.2pt !important;
+    line-height: 1.35 !important;
+    color: #000000 !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .cv-doc-lang-block {
+    font-size: 8.2pt !important;
+    line-height: 1.4 !important;
+    color: #000000 !important;
+    gap: 0.15rem !important;
+  }
+
+  .cv-sep {
+    color: #555555 !important;
   }
 }
