@@ -1645,6 +1645,34 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.35rem;
 }
 
+.cv-doc-bullet-p {
+  margin: 0.15rem 0 0 0;
+  font-size: 0.83rem;
+  line-height: 1.45;
+  color: #374151;
+}
+
+.cv-doc-page-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+}
+
+[data-theme="dark"] .cv-doc-bullet-p {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .cv-doc-page-footer {
+  border-top-color: #1e293b;
+  color: #64748b;
+}
+
 /* ==========================================================================
    CERTIFICATIONS EN LIGNE
    ========================================================================== */
@@ -2030,6 +2058,8 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Règle de coupure stricte : Page 1 coupe après, Page 2 ne déborde pas */
   .cv-page-1 {
+    display: flex !important;
+    flex-direction: column !important;
     page-break-after: always !important;
     break-after: page !important;
     min-height: 275mm !important;
@@ -2038,6 +2068,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .cv-page-2 {
+    display: flex !important;
+    flex-direction: column !important;
     page-break-before: always !important;
     break-before: page !important;
     page-break-after: avoid !important;
@@ -2182,6 +2214,24 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.4 !important;
     color: #000000 !important;
     gap: 0.15rem !important;
+  }
+
+  .cv-doc-bullet-p {
+    margin: 0.05rem 0 0 0 !important;
+    font-size: 7.9pt !important;
+    line-height: 1.3 !important;
+    color: #000000 !important;
+  }
+
+  .cv-doc-page-footer {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-top: auto !important;
+    padding-top: 0.35rem !important;
+    border-top: 0.5px solid #cccccc !important;
+    font-size: 7.5pt !important;
+    color: #555555 !important;
   }
 
   .cv-sep {
