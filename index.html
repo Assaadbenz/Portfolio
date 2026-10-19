@@ -5,8 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Site personnel d'Assaad EL MILOUDI - Étudiant en Master Ingénierie des Systèmes Informatiques, Développeur Web et Spécialiste IA & Data.">
+    content="Site personnel d'Assaad EL MILOUDI - Étudiant en Master 2 (bac+5) IISI SUPMTI Meknès, Développeur Full-Stack, IA & Data Science. Disponible pour un stage PFE (Mars – Juillet 2027).">
+  <meta name="theme-color" content="#0d9488">
   <title>Assaad EL MILOUDI | Portfolio &amp; Site Personnel</title>
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Open Graph / Réseaux Sociaux (LinkedIn, Twitter, WhatsApp) -->
+  <meta property="og:title" content="Assaad EL MILOUDI | Ingénieur & Développeur Full-Stack">
+  <meta property="og:description"
+    content="Élève en Master IISI SUPMTI Meknès, spécialisé en développement Full-Stack, Prompt Engineering, IA et Traitement de Données. À l'écoute d'un stage PFE (Mars – Juillet 2027).">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://assaadbenz.github.io/Portfolio/">
+  <meta property="og:image" content="https://assaadbenz.github.io/Portfolio/images/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +41,7 @@
         <li><a href="#projets">Projets</a></li>
         <li><a href="#parcours">Parcours</a></li>
         <li><a href="cv.html">Mon CV</a></li>
+        <li><a href="cv.html?print=true" class="nav-cv-btn" title="Télécharger ou imprimer mon CV au format PDF">📄 Télécharger CV (PDF)</a></li>
         <li><a href="#contact" class="nav-cta">Me Contacter</a></li>
         <li><button id="theme-toggle" class="theme-toggle-btn" title="Basculer Mode Sombre / Clair"
             aria-label="Basculer Mode Sombre / Clair">🌙</button></li>
@@ -53,6 +68,7 @@
         <div class="hero-actions">
           <a href="#projets" class="btn btn-primary">Explorer mes projets</a>
           <a href="cv.html" class="btn btn-secondary">Consulter mon CV complet</a>
+          <a href="cv.html?print=true" class="btn btn-cv-direct" title="Télécharger ou imprimer mon CV au format PDF">📥 Télécharger CV (PDF)</a>
         </div>
         <!-- Bandeau de Statistiques & Highlights -->
         <div class="hero-stats-strip">
@@ -61,15 +77,15 @@
             <span class="stat-label">SUPMTI Meknès</span>
           </div>
           <div class="hero-stat-pill">
-            <span class="stat-number">4</span>
+            <span class="stat-number counter-number" data-target="4">4</span>
             <span class="stat-label">Projets Réalisés</span>
           </div>
           <div class="hero-stat-pill">
-            <span class="stat-number">3</span>
+            <span class="stat-number counter-number" data-target="3">3</span>
             <span class="stat-label">Expériences Pro</span>
           </div>
           <div class="hero-stat-pill">
-            <span class="stat-number">6</span>
+            <span class="stat-number counter-number" data-target="6">6</span>
             <span class="stat-label">Langues Pratiquées</span>
           </div>
         </div>
@@ -348,17 +364,28 @@
       <!-- Section Projets -->
       <section id="projets" class="section projects-section">
         <h2 class="section-title">Mes Projets Réalisés</h2>
-        <p class="section-subtitle">Découvrez mes réalisations phares disponibles en libre accès sur GitHub.
-        </p>
+        <p class="section-subtitle">Découvrez mes réalisations phares disponibles en libre accès sur GitHub.</p>
+
+        <!-- Filtres interactifs des Projets -->
+        <div class="project-filters" role="tablist" aria-label="Filtrer les projets">
+          <button class="filter-btn active" data-filter="all">Tous (4)</button>
+          <button class="filter-btn" data-filter="web">Web &amp; Full-Stack (2)</button>
+          <button class="filter-btn" data-filter="ai">IA &amp; Prompt Engineering (1)</button>
+          <button class="filter-btn" data-filter="data">Data Science &amp; Scraping (1)</button>
+        </div>
 
         <div class="projects-grid reveal">
           <!-- Projet 1 : Générateur de Prompts Textuels -->
-          <article class="project-card">
+          <article class="project-card" data-category="ai">
             <div class="project-header-banner banner-prompt">
               <div class="project-banner-icon">🤖</div>
               <span class="project-banner-badge">Python &bull; IA &amp; Prompt Engineering</span>
             </div>
             <div class="project-info">
+              <div class="project-meta-badges">
+                <span class="project-badge-pill">🤖 Architecture LLM &amp; Prompts</span>
+                <span class="project-badge-pill status-open">🟢 Code Public</span>
+              </div>
               <h3 class="project-title">Générateur de Prompts Textuels</h3>
               <p class="project-desc">
                 Application d'ingénierie et d'optimisation de requêtes pour modèles LLM, permettant la structuration automatique de prompts adaptés et l'amélioration des résultats génératifs.
@@ -379,12 +406,16 @@
           </article>
 
           <!-- Projet 2 : Ideas Blog - Plateforme de partage d'idées -->
-          <article class="project-card">
+          <article class="project-card" data-category="web">
             <div class="project-header-banner banner-ideas">
               <div class="project-banner-icon">💡</div>
               <span class="project-banner-badge">PHP Laravel &bull; Bootstrap</span>
             </div>
             <div class="project-info">
+              <div class="project-meta-badges">
+                <span class="project-badge-pill">💡 Architecture MVC &amp; ORM</span>
+                <span class="project-badge-pill status-open">🟢 Code Public</span>
+              </div>
               <h3 class="project-title">Ideas Blog - Plateforme de partage d'idées</h3>
               <p class="project-desc">
                 Plateforme communautaire de partage d'idées: publication et gestion de contenus, likes, commentaires imbriqués, suivi des créateurs et fil personnalisé. Profils utilisateurs, thèmes clair/sombre et console d'administration.
@@ -406,12 +437,16 @@
           </article>
 
           <!-- Projet 3 : Job Scrapper - Extraction d'offres -->
-          <article class="project-card">
+          <article class="project-card" data-category="data">
             <div class="project-header-banner banner-scrapper">
               <div class="project-banner-icon">🔍</div>
               <span class="project-banner-badge">Python &bull; Data</span>
             </div>
             <div class="project-info">
+              <div class="project-meta-badges">
+                <span class="project-badge-pill">🔍 Pipeline ETL &amp; Scraping</span>
+                <span class="project-badge-pill status-open">🟢 Code Public</span>
+              </div>
               <h3 class="project-title">Job Scrapper - Extraction d'offres</h3>
               <p class="project-desc">
                 Outil d'extraction et d'agrégation d'offres d'emploi dans le secteur tech, avec nettoyage des données et préparation à l'analyse.
@@ -433,12 +468,16 @@
           </article>
 
           <!-- Projet 4 : Fleet Tracker - Suivi de flotte -->
-          <article class="project-card">
+          <article class="project-card" data-category="web">
             <div class="project-header-banner banner-fleet">
               <div class="project-banner-icon">🚛</div>
               <span class="project-banner-badge">TypeScript &bull; Web</span>
             </div>
             <div class="project-info">
+              <div class="project-meta-badges">
+                <span class="project-badge-pill">🚛 Cartographie &amp; SPA</span>
+                <span class="project-badge-pill status-open">🟢 Code Public</span>
+              </div>
               <h3 class="project-title">Fleet Tracker - Suivi de flotte</h3>
               <p class="project-desc">
                 Application web de suivi de flotte avec cartographie interactive et interface responsive pour visualiser la localisation des véhicules.
@@ -637,18 +676,47 @@
           </div>
         </div>
 
-        <div class="contact-action-group"
-          style="display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
-          <a class="btn btn-cta"
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=elmiloudiassaad2@gmail.com&su=Prise%20de%20contact%20-%20Portfolio"
-            target="_blank" rel="noopener noreferrer" title="Ouvrir directement dans Gmail">
-            ✉️ Écrire via Gmail
-          </a>
-          <a class="btn btn-secondary"
-            href="mailto:elmiloudiassaad2@gmail.com?subject=Prise%20de%20contact%20-%20Portfolio"
-            title="Ouvrir dans votre logiciel de messagerie">
-            💻 Client Mail par Défaut
-          </a>
+        <!-- Assistant Recruteur & Formulaire Interactif -->
+        <div class="contact-assistant-box">
+          <h4 class="assistant-title">⚡ Prise de contact express &amp; Modèles d'emails</h4>
+          <p class="assistant-subtitle">Sélectionnez votre type de demande pour pré-remplir instantanément votre message :</p>
+          
+          <div class="template-pills">
+            <button type="button" class="template-pill active" data-subject="Proposition de Stage PFE (Mars - Juillet 2027)" data-msg="Bonjour Assaad,&#10;&#10;Nous avons découvert votre profil et vos projets avec grand intérêt. Nous souhaiterions échanger avec vous concernant une opportunité de Stage PFE au sein de notre équipe à compter de mars 2027.&#10;&#10;Bien cordialement,">💼 Stage PFE (Mars 2027)</button>
+            <button type="button" class="template-pill" data-subject="Opportunité de Projet / Mission IT" data-msg="Bonjour Assaad,&#10;&#10;Nous recherchons un profil avec vos compétences Full-Stack et Data pour collaborer sur un projet innovant. Pouvons-nous convenir d'un échange ?&#10;&#10;Cordialement,">🚀 Projet / Mission IT</button>
+            <button type="button" class="template-pill" data-subject="Prise de contact professionnelle" data-msg="Bonjour Assaad,&#10;&#10;J'aimerais entrer en contact avec vous pour échanger autour de vos réalisations techniques et opportunités à venir.&#10;&#10;À bientôt,">👋 Contact Général</button>
+          </div>
+
+          <form id="contact-quick-form" class="quick-contact-form" onsubmit="return false;">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Votre Nom ou Entreprise</label>
+                <input type="text" id="contact-name" placeholder="Ex: Nom du Recruteur ou Entreprise" class="form-input">
+              </div>
+              <div class="form-group">
+                <label for="contact-subject">Objet du message</label>
+                <input type="text" id="contact-subject" value="Proposition de Stage PFE (Mars - Juillet 2027)" class="form-input">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contact-body">Votre message pré-formaté</label>
+              <textarea id="contact-body" rows="4" class="form-input form-textarea">Bonjour Assaad,&#10;&#10;Nous avons découvert votre profil et vos projets avec grand intérêt. Nous souhaiterions échanger avec vous concernant une opportunité de Stage PFE au sein de notre équipe à compter de mars 2027.&#10;&#10;Bien cordialement,</textarea>
+            </div>
+
+            <div class="contact-action-group"
+              style="display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.25rem;">
+              <a id="btn-send-gmail" class="btn btn-cta"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=elmiloudiassaad2@gmail.com&su=Proposition%20de%20Stage%20PFE%20(Mars%20-%20Juillet%202027)"
+                target="_blank" rel="noopener noreferrer" title="Ouvrir directement dans Gmail">
+                ✉️ Envoyer via Gmail
+              </a>
+              <a id="btn-send-client" class="btn btn-secondary"
+                href="mailto:elmiloudiassaad2@gmail.com?subject=Proposition%20de%20Stage%20PFE%20(Mars%20-%20Juillet%202027)"
+                title="Ouvrir dans votre logiciel de messagerie">
+                💻 Client Mail (Outlook, Apple Mail...)
+              </a>
+            </div>
+          </form>
         </div>
       </section>
 

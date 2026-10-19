@@ -292,4 +292,124 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2600);
   }
 
+  /* ==========================================================================
+     9. FILTRES INTERACTIFS DES PROJETS PAR CATÉGORIE
+     ========================================================================== */
+  const filterBtns = document.querySelectorAll('.filter-btn');
+
+  if (filterBtns.length > 0 && projectCards.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          if (category === 'all' || cardCat === category) {
+            card.style.display = 'flex';
+            card.style.opacity = '1';
+            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  /* ==========================================================================
+     10. COMPTEURS ANIMÉS DES STATISTIQUES HERO
+     ========================================================================== */
+  const counterElements = document.querySelectorAll('.counter-number[data-target]');
+  if (counterElements.length > 0) {
+    let countersStarted = false;
+    const startCounters = () => {
+      if (countersStarted) return;
+      countersStarted = true;
+
+      counterElements.forEach(el => {
+        const target = parseInt(el.getAttribute('data-target'), 10);
+        if (isNaN(target)) return;
+
+        let current = 0;
+        const duration = 1000;
+        const stepTime = Math.max(Math.floor(duration / target), 80);
+
+        const timer = setInterval(() => {
+          current += 1;
+          el.textContent = current;
+          if (current >= target) {
+            el.textContent = target;
+            clearInterval(timer);
+          }
+        }, stepTime);
+      });
+    };
+
+    setTimeout(startCounters, 350);
+  }
+
+  /* ==========================================================================
+     11. ASSISTANT RECRUTEUR & FORMULAIRE INTERACTIF DE CONTACT
+     ========================================================================== */
+  const templatePills = document.querySelectorAll('.template-pill');
+  const contactNameInput = document.getElementById('contact-name');
+  const contactSubjectInput = document.getElementById('contact-subject');
+  const contactBodyTextarea = document.getElementById('contact-body');
+  const btnSendGmail = document.getElementById('btn-send-gmail');
+  const btnSendClient = document.getElementById('btn-send-client');
+
+  function updateContactLinks() {
+    if (!btnSendGmail || !btnSendClient) return;
+
+    const name = contactNameInput?.value.trim() || '';
+    const subject = contactSubjectInput?.value.trim() || 'Prise de contact - Portfolio Assaad EL MILOUDI';
+    let body = contactBodyTextarea?.value.trim() || '';
+
+    if (name) {
+      body += `\n\n---\nDe : ${name}`;
+    }
+
+    const encodedSubject = encodeURIComponent(subject);
+    const encodedBody = encodeURIComponent(body);
+
+    btnSendGmail.href = `https://mail.google.com/mail/?view=cm&fs=1&to=elmiloudiassaad2@gmail.com&su=${encodedSubject}&body=${encodedBody}`;
+    btnSendClient.href = `mailto:elmiloudiassaad2@gmail.com?subject=${encodedSubject}&body=${encodedBody}`;
+  }
+
+  if (templatePills.length > 0) {
+    templatePills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        templatePills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        const newSubject = pill.getAttribute('data-subject') || '';
+        const newMsg = pill.getAttribute('data-msg') || '';
+
+        if (contactSubjectInput) contactSubjectInput.value = newSubject;
+        if (contactBodyTextarea) contactBodyTextarea.value = newMsg;
+
+        updateContactLinks();
+        showToast('Modèle de message appliqué !');
+      });
+    });
+
+    [contactNameInput, contactSubjectInput, contactBodyTextarea].forEach(input => {
+      input?.addEventListener('input', updateContactLinks);
+    });
+
+    updateContactLinks();
+  }
+
+  /* ==========================================================================
+     12. IMPRESSION / TÉLÉCHARGEMENT DIRECT CV SI URL ?print=true
+     ========================================================================== */
+  if (window.location.search.includes('print=true')) {
+    setTimeout(() => {
+      window.print();
+    }, 700);
+  }
+
 });
