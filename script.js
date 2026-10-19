@@ -89,6 +89,39 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
+     MENU HAMBURGER MOBILE RESPONSIVE
+     ========================================================================== */
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const navLinksContainer = document.getElementById('nav-links');
+
+  if (mobileMenuBtn && navLinksContainer) {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navLinksContainer.classList.toggle('open');
+      mobileMenuBtn.classList.toggle('active', isOpen);
+      mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Fermer le menu lors du clic sur un lien
+    navLinksContainer.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinksContainer.classList.remove('open');
+        mobileMenuBtn.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Fermer le menu si clic en dehors
+    document.addEventListener('click', (e) => {
+      if (!navLinksContainer.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        navLinksContainer.classList.remove('open');
+        mobileMenuBtn.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* ==========================================================================
      3. NAVIGATION ACTIVE & OMBRE DYNAMIQUE AU DÉFILEMENT
      ========================================================================== */
   const header = document.querySelector('.header');

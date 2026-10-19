@@ -35,7 +35,16 @@
   <header class="header">
     <nav class="navbar" aria-label="Navigation principale">
       <a href="#hero" class="nav-brand">Assaad<span class="dot">.</span></a>
-      <ul class="nav-links">
+      <div class="nav-mobile-controls">
+        <button id="theme-toggle" class="theme-toggle-btn" title="Basculer Mode Sombre / Clair"
+          aria-label="Basculer Mode Sombre / Clair">🌙</button>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+      <ul class="nav-links" id="nav-links">
         <li><a href="#a-propos">À Propos</a></li>
         <li><a href="#competences">Compétences</a></li>
         <li><a href="#projets">Projets</a></li>
@@ -43,8 +52,6 @@
         <li><a href="cv.html">Mon CV</a></li>
         <li><a href="cv.html?print=true" class="nav-cv-btn" title="Télécharger ou imprimer mon CV au format PDF">📄 Télécharger CV (PDF)</a></li>
         <li><a href="#contact" class="nav-cta">Me Contacter</a></li>
-        <li><button id="theme-toggle" class="theme-toggle-btn" title="Basculer Mode Sombre / Clair"
-            aria-label="Basculer Mode Sombre / Clair">🌙</button></li>
       </ul>
     </nav>
   </header>
