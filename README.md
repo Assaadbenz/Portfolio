@@ -1,38 +1,76 @@
 # Portfolio & Site Personnel — Assaad EL MILOUDI
 
-Site web personnel et CV professionnel conçus en pur **HTML5 & CSS3** (0% JavaScript).
+Site web personnel, portfolio interactif et CV professionnel d'**Assaad EL MILOUDI**, étudiant en **Master 2 en Ingénierie des Systèmes Informatiques (IISI)** à **SUPMTI Meknès**, développeur Full-Stack, IA & Data Science.
+
+🌐 **Site en direct (GitHub Pages) :** [https://assaadbenz.github.io/Portfolio/](https://assaadbenz.github.io/Portfolio/)  
+📄 **Curriculum Vitae en ligne :** [https://assaadbenz.github.io/Portfolio/cv.html](https://assaadbenz.github.io/Portfolio/cv.html)
+
+---
 
 ## 🌟 Présentation
-Ce projet constitue le site web vitrine et le portfolio d'**Assaad EL MILOUDI**, étudiant en **Master en Ingénierie des Systèmes Informatiques** à **SUPMTI Meknès**, développeur web et passionné d'analyse de données et d'intelligence artificielle.
+Ce projet présente le profil, les compétences, le parcours académique et les projets phares d'Assaad EL MILOUDI. Conçu pour maximiser l'impact auprès des recruteurs et des équipes techniques, il propose une expérience fluide, réactive et élégante en mode clair et sombre.
 
-## 🚀 Contenu & Fonctionnalités
-- **Bannière d'accueil (Hero)** : Animations CSS de nuages flottants, typographie soignée et présentation percutante.
-- **À Propos** : Présentation du parcours et des ambitions professionnelles.
-- **Compétences Techniques (Hard Skills)** : Développement Web, Data Science, Prompt Engineering, Bureautique et bases en Robotique & Réseaux.
-- **Soft Skills & Langues** : Résolution de problèmes, esprit d'analyse, travail d'équipe et barres de niveau pour 6 langues (Arabe, Français, Anglais, Espagnol, Portugais, Allemand).
-- **Projets GitHub Mis en Avant** :
-  - [🚛 Fleet Tracker](https://github.com/Assaadbenz/fleet-tracker) — Plateforme de gestion et supervision de flotte en temps réel (TypeScript).
-  - [🔍 Job Scrapper](https://github.com/Assaadbenz/jobscrapper) — Outil de web scraping et d'analyse d'offres d'emploi (Python).
-  - [🤖 Générateur de Prompts Texte](https://github.com/Assaadbenz/Generateur_Prompts_Text) — Outil d'ingénierie de prompt automatisée pour LLMs (Python).
-- **Parcours & Formations** :
-  - Master en Ingénierie des Systèmes Informatiques (SUPMTI Meknès)
-  - Licence Professionnelle en Réseaux et Télécoms (SUPTEMA)
-  - Technicien Spécialisé en Développement Informatique (EPIM)
-  - Classes Préparatoires (UPF Fès)
-  - 1ère Année Développement Informatique (ISTAG Bab Tizimi Meknès)
-- **Stages Professionnels** : NARSA Taza (Travaux Publics) et Société AssaadWijdaneFrères S.A.R.L Meknès.
-- **Certifications en Ligne** :
-  - *Data Science Essentials* — Cisco Networking Academy
-  - *Full-Stack Web Developer* — Udemy
-- **Page de CV Indépendante (`cv.html`)** : Mise en page professionnelle prête pour l'impression ou l'enregistrement en PDF (`Ctrl+P`).
-- **Coordonnées Complètes** : Email, téléphone, adresse et liens sociaux.
+---
 
-## 🛠️ Technologies Utilisées
-- **HTML5 sémantique** : Accessibilité et structure optimisée.
-- **CSS3 moderne** : Variables CSS, Flexbox, CSS Grid, media queries responsives et styles d'impression `@media print`.
+## 🚀 Fonctionnalités Clés
+- **Bannière d'accueil interactive (Hero)** : Effet machine à écrire dynamique (*Typewriter*), nuages flottants, compteurs de statistiques animés et boutons d'action rapide.
+- **Filtres de Projets par Catégorie** : Tri dynamique en un clic (*Web & Full-Stack*, *Mobile*, *IA & Prompt Engineering*, *Data Science & Scraping*).
+- **Cartes de Projets avec Effet 3D Tilt** : Interaction de survol en perspective 3D et badges de statut d'architecture (`🟢 Code Public`, `🛡️ Stack MERN Sécurisée`, etc.).
+- **Assistant Recruteur & Prise de Contact Express** : Modèles d'emails pré-formatés (*Stage PFE Mars 2027*, *Projet / Mission IT*, *Contact Général*) avec ouverture directe dans Gmail ou logiciel client.
+- **Mode Sombre / Mode Clair (Dark / Light)** : Bascule instantanée avec mémorisation des préférences dans `localStorage`.
+- **Page de CV Dédiée (`cv.html`)** : Mise en page responsive pour mobile et règles strictes `@media print` garantissant une impression/exportation sur **2 pages A4 maximum**.
+- **Téléchargement direct du CV (`?print=true`)** : Lien ouvrant directement la boîte de dialogue d'impression / export PDF.
+- **Copie Rapide dans le Presse-papiers** : Copie en 1 clic de l'email ou du numéro de téléphone avec notification Toast élégante.
+
+---
+
+## 💻 Projets GitHub Mis en Avant (6 Projets)
+
+1. [🤖 Générateur de Prompts Textuels](https://github.com/Assaadbenz/Generateur_Prompts_Text)  
+   *Python • IA & Prompt Engineering • Optimisation LLM*  
+   Application d'ingénierie et d'optimisation de requêtes pour modèles LLM facilitant la génération de contenu structuré.
+
+2. [💡 Ideas Blog — Plateforme Communautaire](https://github.com/Assaadbenz/IdeasBlog)  
+   *PHP • Laravel • Bootstrap • Architecture MVC*  
+   Réseau de partage d'idées : publication, likes, commentaires imbriqués, abonnements aux créateurs, profils personnalisés et console d'administration.
+
+3. [📋 MERN Secure Kanban](https://github.com/Assaadbenz/mern-secure-kanban)  
+   *TypeScript • React • Node.js • Express • MongoDB • Sécurité JWT*  
+   Plateforme de gestion de flux de travail agile (Kanban) hautement sécurisée avec glisser-déposer (Drag & Drop), gestion d'états réactive et authentification renforcée.
+
+4. [⚡ MindFlow — Mobile Task Manager](https://github.com/Assaadbenz/MindFlow)  
+   *TypeScript • Application Mobile • UI/UX • Productivité*  
+   Application mobile moderne dédiée à la planification quotidienne, l'organisation des priorités et le suivi de productivité personnelle.
+
+5. [🔍 Job Scrapper — Extraction d'Offres Tech](https://github.com/Assaadbenz/jobscrapper)  
+   *Python • Web Scraping • BeautifulSoup • Data Extraction*  
+   Outil d'automatisation, d'extraction et d'agrégation d'offres d'emploi dans le secteur informatique avec structuration des données.
+
+6. [🚛 Fleet Tracker — Suivi de Flotte](https://github.com/Assaadbenz/fleet-tracker)  
+   *TypeScript • Cartographie Interactive • Interface Responsive*  
+   Application de supervision de véhicules en temps réel avec cartographie interactive et suivi de statut.
+
+---
+
+## 🎓 Formations & Parcours
+- **2025 – Présent** : Master en Ingénierie intelligente des Systèmes Informatiques (IISI) — *SUPMTI Meknès*
+- **2024 – 2025** : Licence professionnelle (BAC+3) Réseaux & Télécommunications — *SUPTEMA*
+- **2022 – 2024** : Diplôme de Technicien Spécialisé en Développement Informatique — *EPIM*
+- **2020 – 2021** : 1ère Année Développement Informatique — *ISTAG Bab Tizimi Meknès*
+
+---
+
+## 🛠️ Stack Technique
+- **HTML5 sémantique** : Structure optimisée pour le référencement naturel (SEO) et l'accessibilité.
+- **CSS3 moderne** : Design System basé sur des variables CSS, Flexbox, CSS Grid, effets de verre (*glassmorphism*), animations fluides et règles d'impression `@media print`.
+- **JavaScript Vanilla (ES6+)** : Code pur sans dépendance externe lourde (IntersectionObserver, Clipboard API, animations de compteurs, filtres interactifs).
+- **SEO & Réseaux Sociaux** : Balises OpenGraph (LinkedIn, WhatsApp, Twitter) et favicon vectoriel SVG haute résolution.
+
+---
 
 ## 📬 Contact
 - **Email** : [elmiloudiassaad2@gmail.com](mailto:elmiloudiassaad2@gmail.com)
 - **Téléphone** : +212 6 62 07 95 68
 - **GitHub** : [https://github.com/Assaadbenz](https://github.com/Assaadbenz)
 - **Localisation** : Meknès, Maroc
+- **Disponibilité** : Stage PFE (Mars – Juillet 2027)

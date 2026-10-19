@@ -1220,6 +1220,14 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(135deg, #d946ef 0%, #8b5cf6 50%, #6366f1 100%);
 }
 
+.banner-kanban {
+  background: linear-gradient(135deg, #0284c7 0%, #0f766e 50%, #0f172a 100%);
+}
+
+.banner-mindflow {
+  background: linear-gradient(135deg, #059669 0%, #10b981 50%, #064e3b 100%);
+}
+
 .project-banner-icon {
   font-size: 2.5rem;
   margin-bottom: 0.4rem;
